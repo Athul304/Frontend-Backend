@@ -1,0 +1,75 @@
+
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --primary: #22c55e;
+  --danger: #ef4444;
+  --border: #1f2937;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg); color: var(--text);
+}
+
+.app-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 20px; border-bottom: 1px solid var(--border); background: var(--panel);
+}
+.brand { font-weight: 700; color: var(--text); }
+.user-chip { margin-right: 10px; color: var(--muted); }
+.muted { color: var(--muted); }
+
+.app-main { padding: 20px; }
+
+.card {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px; margin-bottom: 16px;
+}
+
+.grid {
+  display: grid; grid-template-columns: 1fr; gap: 16px;
+}
+@media (min-width: 960px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+
+.form-grid {
+  display: grid; gap: 12px;
+}
+label { display: grid; gap: 6px; }
+input, select, textarea {
+  padding: 8px; border-radius: 6px; border: 1px solid var(--border);
+  background: #0b1020; color: var(--text);
+}
+
+.btn {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px;
+  background: #0b1020; color: var(--text); cursor: pointer;
+}
+.btn.primary { background: var(--primary); color: #0b1020; border-color: var(--primary); }
+.btn.danger { background: var(--danger); color: #0b1020; border-color: var(--danger); }
+
+.tabs { display: flex; gap: 8px; }
+
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 12px; }
+.tool-card { border: 1px solid var(--border); border-radius: 8px; padding: 12px; background: #0b1020; }
+.tool-card.selected { outline: 2px solid var(--primary); }
+.tool-header { display: flex; justify-content: space-between; align-items: baseline; }
+.badge { background: #1f2937; padding: 3px 6px; border-radius: 999px; color: var(--muted); font-size: 12px; }
+.tool-actions { margin-top: 8px; }
+
+.review-list { list-style: none; padding: 0; margin: 0; }
+.review-item { padding: 8px; border-bottom: 1px solid var(--border); }
+.review-rating { color: var(--primary); }
+
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { border: 1px solid var(--border); padding: 8px; }
+.error { color: #fca5a5; }
+.hint { color: var(--muted); }
+.divider { height: 1px; background: var(--border); margin: 12px 0; }
